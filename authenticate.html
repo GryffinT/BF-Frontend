@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Business Finder Authentication</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <!-- SIGNUP SECTION -->
+    
+    <section class="authModal" id='signupModal'>
+      <h1>Signup</h1>
+      <form id='signupAuthForm' class="loginForm">
+        <input type="password" name="password" class="authWidget" placeholder="Password" required>
+        <input type="username" name="username" class="authWidget" placeholder="Username" required>
+        <input type="email" name="email" class="authWidget" placeholder="Example@gmail.com" required>
+        <div>
+          <h1 style="font-size: 15px;">
+            User Responsibility & Review Integrity Agreement
+          </h1>
+          <p style="width: 100%; overflow: auto;height: 65px">
+            By using this app, you agree to engage responsibly,
+            respect local businesses, and contribute honest,
+            truthful, and fair feedback. You commit to sharing genuine experiences,
+            avoiding misleading or harmful content, and using the platform in a way
+            that supports a trustworthy and positive community for everyone.
+          </p>
+          <hr>
+          <input type="checkbox" name="agree" required>
+          <label for="agree">I have read and agree to these terms</label>
+        </div>
+        <button type="submit" class="espressoButton">Signup</button>
+      </form>
+    </section>
+
+    <!-- signupModal logic -->
+
+    <script src="authSignup.js" defer></script>
+
+    <!-- LOGIN SECTION -->
+
+    <section class="authModal" id='loginModal'>
+      <h1>Login</h1>
+      <form class="loginForm" id='loginAuthForm'>
+        <hr style="width:100%; background-color: rgb(159,56,29)">
+        <input id='loginPass' type="password" name="password" class="authWidget" placeholder="Password" required>
+        <input id='loginEmail' type="email" name="email" class="authWidget" placeholder="Example@gmail.com" required>
+        <hr style="width: 100%">
+        <button type="submit" class="espressoButton">Login</button>
+      </form>
+    </section>
+
+    <script src="authLogin.js" defer></script>
+
+    <!-- auth mode logic -->
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const mode = params.get('mode');
+
+      window.onload = () => {
+        if (mode === 'login') {
+          openLoginModal();
+        } else if (mode === 'signup') {
+          openSignupModal();
+        }
+      };
+
+      let openLoginModal = () => {
+        document.getElementById('loginModal').style.display= 'grid';
+      }
+
+      let openSignupModal = () => {
+        document.getElementById('signupModal').style.display = 'grid';
+      }
+    </script>
+  </body>
+</html>

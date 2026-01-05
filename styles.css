@@ -1,0 +1,180 @@
+html {
+  overflow: hidden;
+}
+
+html, body {
+  background-color: #BEA57D;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+body {
+  justify-content: center;
+  display: flex;
+  align-items:center;
+  background-image: url(https://i.postimg.cc/RZWH8vHb/screenshot-2026-01-01-19-56-01.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.loginCard {
+  color: rgb(255,248,231);
+  background-color: rgba(142, 101, 62, .2);
+  border-radius: 5%;
+  text-align: center;
+
+  width: clamp(300px, 50vw, 400px);
+  height: clamp(200px, 50vh, 1000px);
+
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr 1fr;
+  grid-auto-rows: minmax(0, 1fr);
+
+  padding: 15px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  row-gap: 15px;
+
+  font-size: clamp(1rem, 2vmin, 2rem);
+}
+
+.loginCard > * {
+  min-height: 0;
+  min-width: 0;
+}
+
+
+.loginCard h1 {
+  font-size: clamp(2rem, 4vmin 5rem);
+  color: rgb(255,248,231);
+  font-family: 'Raleway', sans-serif;
+}
+
+.loginCard h2 {
+  font-size: clamp(1.5rem, 3vmin, 5rem);
+  color: rgb(255,248,231);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.espressoButton {
+  font-size: clamp(.5rem, 2vmin, 4rem);
+  color: rgb(255,248,231);
+  font-family: 'Work Sans', sans-serif;
+  background-color: rgb(99,71,54);
+  padding: 10px;
+  border-radius:5px;
+  border: none;
+  transition: transform .5s ease;
+}
+
+.espressoButton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.espressoButton:active {
+  animation: clickPulse 0.5s ease;
+}
+
+.latteButton{
+  font-size: clamp(.5rem, 2vmin, 4rem);
+  border: none;
+  padding: 10px;
+  border-radius:5px;
+  color: rgb(255,248,231);
+  font-family: 'Work Sans', sans-serif;
+  background-color: rgb(142,101,62);
+  transition: transform .5s ease;
+}
+
+.latteButton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.latteButton:active {
+  animation: clickPulse 0.5s ease;
+}
+
+@keyframes clickPulse {
+  cursor: wait;
+  0% {transform: scale(1); }
+  25% { transform: scale(1.01); }
+  50% { transform: scale(1.015); }
+  75% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+
+#keyword::after {
+  content: '|';
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.cognacEmphasis {
+  color: rgb(159,56,29);
+  font-style: italic;
+}
+
+.authModal {
+  color: rgb(255,248,231);
+  background-color: rgba(142, 101, 62, .2);
+  border-radius: 5%;
+  text-align: center;
+  width: clamp(300px, 50vw, 400px);
+  height: clamp(200px, 50vh, 1000px);
+  display: none;
+  grid-template-rows: .5fr 3fr;
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  row-gap: 10px;
+}
+
+.authModal > * {
+  min-height: 0;
+  min-width: 0;
+}
+
+
+.authModal h1 {
+  font-size: clamp(2rem, 4vmin 5rem);
+  color: rgb(255,248,231);
+  font-family: 'Raleway', sans-serif;
+}
+
+.authModal h2 {
+  font-size: clamp(1.5rem, 3vmin, 5rem);
+  color: rgb(255,248,231);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.authWidget {
+  font-family: 'Work Sans', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.authModal div {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  padding:10px;
+  border-radius: 10px;
+  background-color: rgb(166,131,104);
+}
+
+.loginForm {
+  justify-self: center;
+  margin-top: auto;
+  display: grid;
+  row-gap: 10px;
+  width: 90%
+}

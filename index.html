@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Business Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body style="align-content: center;">
+    <section class="loginCard">
+      <h1>Welcome User!</h1>
+      <h2>Discover <span id="keyword" class="cognacEmphasis">Delicious</span></h2>
+      <script>
+        const element = document.getElementById('keyword');
+        const words = [
+          'Artisanal.',
+          'Local.',
+          'Boutique.',
+          'Handcrafted.',
+          'Heritage.',
+          'Community.',
+          'Independent.',
+          'Curated.',
+          'Authentic.'
+        ];
+
+        let deleting = false;
+        let wordIndex = 0;
+        let charIndex = 0;
+
+        let typeEffect = () => {
+          const word = words[wordIndex];
+
+          if (!deleting) {
+            element.innerHTML = word.substring(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === word.length) {
+              deleting = true;
+              setTimeout(typeEffect, 1000);
+              return;
+            }
+          } else {
+            element.innerHTML = word.substring(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+              deleting = false;
+              wordIndex = (wordIndex + 1) % words.length;
+            }
+          }
+
+          setTimeout(typeEffect, deleting ? 60 : 120);
+        }
+
+        typeEffect();
+
+      </script>
+      <button class="espressoButton" onclick="goToAuth('signup')">Sign up</button>
+      <button class="latteButton" onclick="goToAuth('login')">Log in</button>
+      <script>
+        let goToAuth = (mode) => {
+          window.location.href = `authenticate.html?mode=${mode}`;
+        }
+      </script>
+
+    </section>
+    <script src="renderer.js"></script>
+  </body>
+</html>
+

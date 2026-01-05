@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="internalStyles.css" rel="stylesheet">
+    <title>Business Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body style=
+    "background-image: url(https://i.postimg.cc/Kv1B7St8/Downtown-Juneau-waterfront.jpg); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-postition: center; 
+    display: flex; 
+    justify-content: center; 
+  ">
+    <section class="locationCard" style="display: flex; flex-direction: column;">
+      <h1>Location Confirmation</h1>
+      <h3>Where should we explore today?</h3>
+
+      <div class="locationCard" style="height: 60%; background-color: rgba(124, 93, 63, .1); border: 2px solid rgba(124, 93, 63,.2); box-shadow: inset 12px 14px 35px rgba(80, 80, 80, 0.65);">
+        <h3>Coordinates</h3>
+        <p id='coordinates'></p>
+        <h3>Location</h3>
+        <p id='location'></p>
+        <h3>Country</h3>
+        <p id='country'></p>
+        <h3>Accuracy</h3>
+        <p id='accuracy'></p>
+      </div>
+      <br>
+      <hr style='width: 100%'>
+      <p>Is this information correct?</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; height: 8%; column-gap: 15px">
+        <button class="latteButton" id="fetchButton">No, fetch location.</button>
+        <button class="espressoButton" id="verify" >Yes, this is correct.</button>
+      </div>
+      <script src="fetchLatLong.js" defer></script>
+      <script src="geoAuth.js" defer></script>
+    </section>
+  </body>
+</html>
