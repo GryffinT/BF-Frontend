@@ -22,15 +22,45 @@ html{
 }
 
 .categoryDisplay {
+  padding: 10px;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   flex: 1;
+  border-radius: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
+.categoryDisplay::-webkit-scrollbar {
+  width: 3px;
+}
+
+.categoryDisplay::-webkit-scrollbar-track {
+  background: rgba(var(--cream), .9);
+  border-radius: 10px;
+}
+
+.categoryDisplay::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+
+.categoryDisplay {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--cream), 0.9) rgba(var(--cream), 0);
+}
+
 
 .title {
   color: rgb(255,255,255);
   font-family: var(--raleway);
+}
+
+.subHeader {
+  color: rgb(var(--espresso));
+  font-family: var(--cormorant);
 }
 
 .bodyGrid {
@@ -47,6 +77,22 @@ html{
 }
 
 /* Interactibles- not buttons */
+
+
+.businessCard {
+  border-radius: 8px;
+  padding: 12px;
+  background-color: rgba(var(--espresso), .2);
+  box-sizing: border-box;
+  border; 1px solid rgb(var(--cream));
+  color: white;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.businessCard:hover {
+  background-color: rgba(var(--latte), .2);
+  transform: scale(1.01);
+}
 
 .searchbar {
   color: black;
@@ -73,13 +119,13 @@ html{
   background-color: rgb(var(--espresso));
   border-radius: 5px;
   border: none;
-  box-shadow: 4px 8px 20px rgba(80, 80, 80, .65);
+  box-shadow: 4px 8px 10px rgba(80, 80, 80, .65);
   transition: transform .5s ease, box-shadow .5s ease;
 }
 
 .espressoButton:hover {
   transform: scale(1.05);
-  box-shadow: 8px 16px 40px rgba(80, 80, 80, .8);
+  box-shadow: 6px 10px 12px rgba(80, 80, 80, .8);
   cursor: pointer;
 }
 
@@ -118,6 +164,28 @@ html{
 }
 
 /* Cards */
+
+.espressoCard {
+  border-radius: 8px;
+  padding: 12px;
+  background-color: rgba(var(--espresso), .2);
+  box-sizing: border-box;
+  border; 1px solid rgb(var(--cream));
+  color: white;
+}
+
+.espressoCardTags {
+  margin: 0;
+  font-size: 0.8rem;
+  color: white;
+  font-family: var(--work);
+}
+
+.espressoCardTitle {
+  font-family: var(--cormorant);
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
+}
 
 .locationCard {
   background-color: rgba(var(--latte), .2);

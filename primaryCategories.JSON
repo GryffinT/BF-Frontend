@@ -1,0 +1,86 @@
+{
+  "commercial": [
+    "commercial.food_and_drink",
+    "commercial.marketplace",
+    "commercial.clothing",
+    "commercial.jewelry",
+    "commercial.health_and_beauty",
+    "commercial.wedding",
+    "commercial.houseware_and_hardware",
+    "commercial.furniture_and_interior",
+    "commercial.garden",
+    "commercial.books",
+    "commercial.stationery",
+    "commercial.hobby",
+    "commercial.pet",
+    "commercial.toy_and_game",
+    "commercial.second_hand",
+    "commercial.antiques",
+    "commercial.art",
+    "commercial.baby_goods",
+    "commercial.gift_and_souvenir",
+    "commercial.vehicle",
+    "commercial.trade"
+  ],
+
+  "catering": [
+    "catering.restaurant",
+    "catering.cafe",
+    "catering.bar",
+    "catering.pub",
+    "catering.biergarten",
+    "catering.taproom",
+    "catering.ice_cream"
+  ],
+
+  "entertainment": [
+    "entertainment.culture",
+    "entertainment.museum",
+    "entertainment.cinema",
+    "entertainment.bowling_alley",
+    "entertainment.amusement_arcade",
+    "entertainment.escape_game",
+    "entertainment.miniature_golf",
+    "entertainment.aquarium",
+    "entertainment.zoo"
+  ],
+
+  "leisure": [
+    "leisure.park",
+    "leisure.picnic",
+    "leisure.playground",
+    "leisure.spa"
+  ],
+
+  "natural": [
+    "natural.forest",
+    "natural.mountain",
+    "natural.water",
+    "natural.sand",
+    "natural.protected_area"
+  ],
+
+  "services": [
+    "service.beauty",
+    "service.cleaning",
+    "service.locksmith",
+    "service.tailor",
+    "service.vehicle",
+    "service.taxi",
+    "service.travel_agency",
+    "service.estate_agent",
+    "service.financial",
+    "service.post",
+    "service.recycling",
+    "service.funeral_directors",
+    "service.crematorium",
+    "service.social_facility"
+  ],
+
+  "tourist": [
+    "tourism.attraction",
+    "tourism.sights",
+    "tourism.information"
+  ]
+}
+

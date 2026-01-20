@@ -8,4 +8,3 @@ contextBridge.exposeInMainWorld("geo", {
   fallback: () => ipcRenderer.invoke("fallback-geolocate")
 });
 
-
