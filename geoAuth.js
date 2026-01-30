@@ -1,3 +1,4 @@
+
 button = document.getElementById('verify');
 
 const verifyGeoData = () => {

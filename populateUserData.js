@@ -1,3 +1,4 @@
+
 const usernameElem = document.getElementById("username");
 const cityElem = document.getElementById("city");
 

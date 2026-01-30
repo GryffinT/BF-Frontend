@@ -1,3 +1,4 @@
+
 const logoutButton = document.getElementById('logoutButton');
 const relocateButton = document.getElementById('relocateButton');
 

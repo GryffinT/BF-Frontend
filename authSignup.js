@@ -1,3 +1,4 @@
+
 const form = document.getElementById("signupAuthForm");
 
 form.addEventListener("submit", async (e) => {

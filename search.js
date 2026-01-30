@@ -1,5 +1,6 @@
 // The search function for the Business finder page, used by homeRenderer.js
 
+
 const resultsBox = document.getElementById('SearchResults');
 
 const search = ( text = null ) => {
