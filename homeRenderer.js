@@ -334,53 +334,56 @@ let renderFinderDisplay = async () => {
                   if (!geoRes.ok) throw new Error("Failed to fetch place details");
                   const placeData = await geoRes.json();
 
-                  const card = document.createElement("div");
-                  card.className = "espressoCard";
-                  card.style.display = "flex";
-                  card.style.flexDirection = "column";
-                  card.style.marginBottom = "8px";
-                  card.style.padding = "6px";
-                  card.style.border = "1px solid #ccc";
-                  card.style.borderRadius = "4px";
+                  card = new UIElement('div', null, null, 'espressoCard');
+
+                  Object.assign(card.el.style, {
+
+                    display : "flex",
+                    flexDirection : "column",
+                    marginBottom : "8px",
+                    padding : "6px",
+                    border : "1px solid #ccc",
+                    borderRadius : "4px",
+
+                  });
 
                   const name = placeData.features?.[0]?.properties?.name || "Unknown Place";
                   const address = placeData.features?.[0]?.properties?.formatted || "";
-                  card.innerHTML = `<strong>${name}</strong><br>${address}<br>`;
-                  card.style.height = '250px';
+                  card.el.innerHTML = `<strong>${name}</strong><br>${address}<br>`;
+                  card.el.style.height = '250px';
 
-                  const removeBtn = document.createElement("button");
-                  removeBtn.innerText = "Remove";
-                  removeBtn.style.marginTop = "6px";
-                  removeBtn.onclick = async () => {
-                    try {
-                      const removeRes = await fetch(
-                        "https://bf-backend-production.up.railway.app/auth/favorites/remove",
-                        {
-                          method: "POST",
-                          headers: {
-                            Authorization: `Bearer ${token}`,
-                            "Content-Type": "application/json"
-                          },
-                          body: JSON.stringify({ lat: fav.lat, lng: fav.lng })
-                        }
-                      );
+                  const removeBtn = new Button('Remove', 
+                    { onclick: async () => {
+                      try {
+                        const removeRes = await fetch(
+                          "https://bf-backend-production.up.railway.app/auth/favorites/remove",
+                          {
+                            method: "POST",
+                            headers: {
+                              Authorization: `Bearer ${token}`,
+                              "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ lat: fav.lat, lng: fav.lng })
+                          }
+                        );
 
-                      if (!removeRes.ok) throw new Error("Failed to remove favorite");
+                        if (!removeRes.ok) throw new Error("Failed to remove favorite");
 
-                      card.remove();
-                    } catch (err) {
-                      console.error("Error removing favorite:", err);
-                      alert("Could not remove favorite.");
-                    }
-                  };
-                  
-                  removeBtn.style.height = '40px';
-                  removeBtn.style.marginTop = 'auto';
-                  removeBtn.classList.add('espressoButton');
+                        card.el.remove();
+                      } catch (err) {
+                        console.error("Error removing favorite:", err);
+                        alert("Could not remove favorite.");
+                      }}},
+                    'espressoButton');
 
-                  card.appendChild(removeBtn);
+                  Object.assign( removeBtn.el.style, {
+                    height: '40px',
+                    marginTop: 'auto',
+                  });
 
-                  categoryM.el.appendChild(card);
+                  card.el.appendChild(removeBtn.el);
+
+                  categoryM.el.appendChild(card.el);
 
                 } catch (geoErr) {
                   console.error("Error fetching place details:", geoErr);
@@ -479,18 +482,7 @@ let renderFinderSearch = () => {
     searchG.appendChild(filterWidgets.el);
   }
 
-  document.getElementById('searchGrid').getElementsByTagName('div')[0].classList.add('rating');
-  document.getElementById('searchGrid').getElementsByTagName('div')[0].appendChild(starLabel.el);
-  
-  document.getElementById('searchGrid').getElementsByTagName('div')[1].appendChild(proxSearch.el);
-
   for (let i = 1; i <= 5; i++) {
-    const ratingsFilter = new UIElement('input', null, null, 'star-radio'); 
-    ratingsFilter.el.type = 'radio';
-    ratingsFilter.el.name = 'starRatings';
-    ratingsFilter.el.value = i;
-    // console.log(i);
-
     document
       .getElementById('searchGrid')
       .getElementsByTagName('div')[0]

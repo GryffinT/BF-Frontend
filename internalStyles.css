@@ -226,7 +226,7 @@ html{
   color: white;
   display: grid;
   row-gap: 10px;
-  grid-template-rows: .1fr .1fr 20px auto auto auto auto auto;
+  grid-template-rows: .1fr .1fr 20px auto auto auto auto;
 }
 
 .leftSection h1 {
