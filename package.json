@@ -26,6 +26,10 @@
     "node-fetch": "^2.7.0"
   },
   "build": {
+    "files": [
+      "**/*",
+      "!dist/*"
+    ],
     "appId": "com.businessfinder.app",
     "productName": "Business Finder",
     "win": {
